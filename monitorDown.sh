@@ -24,8 +24,11 @@ while true; do
         cd "$TARGET" || exit 1
 
         # Git workflow
+        sleep "$CHECK_INTERVAL"
         git add -A
+        sleep "$CHECK_INTERVAL"
         git commit -m "latest update"
+        sleep "$CHECK_INTERVAL"
         git push
 
         echo "[$(date)] Done. Waiting for next file..."
